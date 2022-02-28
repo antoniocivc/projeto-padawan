@@ -1,4 +1,7 @@
 #! /bin/bash
+sudo wget https://releases.hashicorp.com/terraform/1.1.6/terraform_1.1.6_linux_amd64.zip
+sudo unzip terraform_1.1.6_linux_amd64.zip
+sudo mv terraform /usr/bin/
 sudo yum update –y
 sudo amazon-linux-extras install epel -y
 sudo yum-config-manager --enable epel

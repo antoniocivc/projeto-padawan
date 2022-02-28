@@ -1,9 +1,11 @@
+#cria a EC2 passando o userdata definido nas variables
 resource "aws_instance" "web" {
-
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
-  subnet_id     = var.instance_subnet
+  subnet_id     = aws_subnet.jenkins_public_subnet.id
   key_name      = var.key_name
-  vpc_security_group_ids = ["sg-84f010a3"]
-  user_data     = "${file("install_jenkins_ubuntu.sh")}"
+  vpc_security_group_ids = [aws_security_group.ssh_jenkins.id]
+  associate_public_ip_address = true
+  tags          = var.tags 
+  user_data     = "${file("${var.user_data}")}"
 }
