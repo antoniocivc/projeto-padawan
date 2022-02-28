@@ -21,7 +21,7 @@ pipeline {
         stage('Terraform plan') {
             steps {
                 
-                    dir("ec2-jenkins") {
+                    dir("terraform") {
                     withAWS(credentials:'aws-credentials') {
                     sh 'terraform plan -var="domain=patomagico.com.br"'
                 }
@@ -32,7 +32,7 @@ pipeline {
             
             steps {
                  
-                 dir("ec2-jenkins") {
+                 dir("terraform") {
                  withAWS(credentials:'aws-credentials') {
                  sh 'terraform apply --auto-approve -var="domain=patomagico.com.br"'
                  }
