@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+    tools {
+        terraform 'terraform'
+            }
+    stages {
+        stage('Git checkout') {
+            steps {
+                git branch: 'teste-do-pato', credentialsId: '	github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
+            }
+        }
+        
+        stage('Terraform init') {
+            steps {
+                dir("terraform") { 
+                sh 'terraform init  -var="domain=patomagico.com.br"'
+                }
+            }
+        }
+        
+        stage('Terraform plan') {
+            steps {
+                
+                    dir("ec2-jenkins") {
+                    withAWS(credentials:'aws-credentials') {
+                    sh 'terraform plan -var="domain=patomagico.com.br"'
+                }
+            }
+        }
+        }
+        stage('Terraform apply') {
+            
+            steps {
+                 
+                 dir("ec2-jenkins") {
+                 withAWS(credentials:'aws-credentials') {
+                 sh 'terraform apply --auto-approve -var="domain=patomagico.com.br"'
+                 }
+                     
+                 }
+            }
+            }
+        }
+    }
