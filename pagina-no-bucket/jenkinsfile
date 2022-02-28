@@ -13,7 +13,7 @@ pipeline {
         stage('Terraform init') {
             steps {
                 dir("terraform") { 
-                sh 'terraform init -reconfigure -var="domain=patomagico.com.br"'
+                sh 'terraform init -var="domain=patomagico.com.br"'
                 }
             }
         }
