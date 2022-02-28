@@ -13,7 +13,9 @@ pipeline {
         stage('Terraform init') {
             steps {
                 dir("pagina-no-bucket/terraform") { 
+                withAWS(credentials:'aws-credentials') {
                 sh 'terraform init'
+                }
                 }
             }
         }
