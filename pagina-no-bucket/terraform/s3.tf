@@ -15,8 +15,8 @@ data "template_file" "s3-public-policy" {
 #}
 
 module "website" {
-  #source        = ".terraform/website"
-  source        = "github.com/chgasparoto/terraform-s3-object-notification"
+  source        = ".terraform/modules/website"
+ # source        = "github.com/chgasparoto/terraform-s3-object-notification"
   name          = local.domain
   acl           = "public-read"
  
