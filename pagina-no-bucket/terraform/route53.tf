@@ -25,7 +25,8 @@ resource "aws_route53_record" "website" {
 resource "aws_route53_record" "www" {
   count = local.has_domain ? 1 : 0
 
-  name    = "www.${local.domain}"
+  #name    = "www.${local.domain}"
+  name    = "www.${aws_cloudfront_distribution.this.domain_name}"
   type    = "A"
   zone_id = aws_route53_zone.this[0].zone_id
 
