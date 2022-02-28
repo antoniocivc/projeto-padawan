@@ -1,0 +1,1 @@
+terraform -chdir="../" destroy --auto-approve -var="key_name=key_to_ssh"

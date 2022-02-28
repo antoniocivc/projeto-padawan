@@ -1,0 +1,1 @@
+terraform -chdir="../" plan -var="key_name=key_to_ssh"
