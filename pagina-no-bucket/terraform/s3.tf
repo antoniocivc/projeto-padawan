@@ -21,8 +21,7 @@ module "website" {
   acl           = "public-read"
  
   policy        = data.template_file.s3-public-policy.rendered
-  block_public_acls   = true
-  block_public_policy = true
+
   force_destroy = !local.has_domain
   tags          = local.common_tags
   versioning = {
