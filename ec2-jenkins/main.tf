@@ -9,13 +9,23 @@ terraform {
     }
   }
 
-}
+  backend "s3" {
+    bucket = "tfstate-309950511952"
+    key    = "ec2-jenkins/tfstate"
+    region = "us-east-1"
+    dynamodb_table = "tflock-tfstate-309950511952"
+ }
 
+}
 
 provider "aws" {
   region = var.aws_region
   
 }
+
+
+
+
 
 #resource "local_file" "output_txt" {
 #  filename = "output.txt"
