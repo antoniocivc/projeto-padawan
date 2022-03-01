@@ -26,12 +26,12 @@ resource "aws_route53_record" "www" {
   count = local.has_domain ? 1 : 0
 
   #name    = "www.${local.domain}"
-  name    = "www.${aws_cloudfront_distribution.this.domain_name}"
+  name    = "www.${aws_cloudfront_distribution.this.aliases[0]}"
   type    = "A"
   zone_id = aws_route53_zone.this[0].zone_id
 
   alias {
-   evaluate_target_health = false
+  evaluate_target_health = false
 
   name                   = aws_route53_zone.this[0].name
   zone_id                = aws_route53_zone.this[0].zone_id
