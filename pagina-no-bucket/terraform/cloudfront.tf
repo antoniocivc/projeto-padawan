@@ -63,5 +63,5 @@ resource "aws_cloudfront_distribution" "this" {
     }
   }
 
-  tags = [var.tags]
+  tags = local.common_tags
 }
