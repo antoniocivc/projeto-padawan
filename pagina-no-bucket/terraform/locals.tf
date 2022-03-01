@@ -4,7 +4,6 @@ locals {
   regional_domain = module.website.regional_domain_name
   common_tags = {
     Name         = "Jenkins"
-    Managed_by   = "Terraform"
-    
+    Managed_by   = "Terraform"    
   }
 }
