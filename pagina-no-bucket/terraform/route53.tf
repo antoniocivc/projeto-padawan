@@ -23,7 +23,8 @@ resource "aws_route53_record" "www" {
   type    = "A"
   zone_id = aws_route53_zone.this[0].zone_id
   alias {
-  evaluate_target_health = false
+  #evaluate_target_health = false
+  evaluate_target_health = true
   #name                   = aws_route53_zone.this[0].name
   name                   = "${aws_cloudfront_origin_access_identity.origin_access_identity.comment}"
   zone_id                = aws_route53_zone.this[0].zone_id 
