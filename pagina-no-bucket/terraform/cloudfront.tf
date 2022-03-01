@@ -8,7 +8,9 @@ resource "aws_cloudfront_distribution" "this" {
   comment             = "Managed by Terraform"
   default_root_object = "index.html"
   aliases             = local.has_domain ? [local.domain, "www.${local.domain}", "*.${local.domain}"] : []
-
+  depends_on = [
+    aws_route53_record.cert_validation
+  ]
 #  logging_config {
 #    bucket          = module.logs.domain_name
 #    prefix          = "cnd/"
