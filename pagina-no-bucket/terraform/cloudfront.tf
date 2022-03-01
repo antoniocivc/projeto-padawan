@@ -8,9 +8,9 @@ resource "aws_cloudfront_distribution" "this" {
   comment             = "Managed by Terraform"
   default_root_object = "index.html"
   aliases             = local.has_domain ? [local.domain, "www.${local.domain}", "*.${local.domain}"] : []
-#  depends_on = [
-#    aws_acm_certificate_validation.this
-#  ]
+  depends_on = [
+    aws_acm_certificate_validation.this
+  ]
 #  logging_config {
 #    bucket          = module.logs.domain_name
 #    prefix          = "cnd/"
