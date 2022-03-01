@@ -9,7 +9,7 @@ resource "aws_cloudfront_distribution" "this" {
   default_root_object = "index.html"
   aliases             = local.has_domain ? [local.domain, "www.${local.domain}", "*.${local.domain}"] : []
   depends_on = [
-    aws_route53_record.cert_validation
+    aws_acm_certificate_validation.this
   ]
 #  logging_config {
 #    bucket          = module.logs.domain_name
