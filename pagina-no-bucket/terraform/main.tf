@@ -8,6 +8,7 @@ terraform {
     }
   }
    backend "s3" {
+    profile = "pessoal"
     bucket = "tfstate-309950511952"
     key    = "pagina-no-bucket/tfstate"
     region = "us-east-1"
@@ -15,10 +16,9 @@ terraform {
  }
 }
 
-
 provider "aws" {
   region = "us-east-1"
-  #profile = "pessoal"
+  profile = "pessoal"
 }
 
 resource "random_pet" "website" {
