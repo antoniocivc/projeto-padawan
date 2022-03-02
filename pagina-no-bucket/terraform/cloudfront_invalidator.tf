@@ -63,3 +63,14 @@ resource "aws_lambda_permission" "cloudfront_invalidator" {
   principal     = "s3.amazonaws.com"
   source_arn    = module.website.arn
 }
+
+resource "aws_s3_bucket_notification" "bucket_notification" {
+  bucket = local.domain
+
+  lambda_function {
+    lambda_function_arn = "${aws_lambda_function.cloudfront_invalidator.arn}"
+    events              = ["s3:ObjectCreated:*"]
+    #filter_prefix       = "/*"
+    #filter_suffix       = ".html"
+  }
+}

@@ -18,3 +18,8 @@ output "origin_id" {
     value = local.regional_domain
  
 }
+
+output "arn_bucket" {
+    value = module.website.arn
+ 
+}
