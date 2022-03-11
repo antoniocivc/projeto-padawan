@@ -42,7 +42,7 @@ atlantis_bitbucket_user_token = ""
 # atlantis_bitbucket_base_url = ""
 
 # Tags
-
+# Tags
 tags = {
   Name = "atlantis"
 }
