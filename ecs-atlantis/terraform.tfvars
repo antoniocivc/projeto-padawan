@@ -27,8 +27,8 @@ atlantis_repo_allowlist = ["github.com/terraform-aws-modules/*", "github.com/ant
 
 # Specify one of the following block.
 # For Github
-atlantis_github_user = "kingarthur"
-atlantis_github_user_token = "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"
+atlantis_github_user = "kingaquaman"
+atlantis_github_user_token = "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"
 
 # For Gitlab
 atlantis_gitlab_user = ""
@@ -41,7 +41,6 @@ atlantis_bitbucket_user_token = ""
 # For Bitbucket on prem (Stash)
 # atlantis_bitbucket_base_url = ""
 
-# Tags
 # Tags
 tags = {
   Name = "atlantis"
