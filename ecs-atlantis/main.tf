@@ -106,7 +106,7 @@ locals {
     var.tags,
   )
 
-  policies_arn = var.policies_arn != null ? var.policies_arn : ["arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"]
+  policies_arn = var.policies_arn != null ? var.policies_arn : ["arn:${data.aws_partition.current.partition}:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy", "arn:aws:iam::aws:policy/AdministratorAccess"]
 
   # Chunk these into groups of 5, the limit for IPs in an AWS lb listener
   whitelist_unauthenticated_cidr_block_chunks = chunklist(
