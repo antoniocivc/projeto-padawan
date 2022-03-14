@@ -11,7 +11,7 @@ terraform {
 
   backend "s3" {
     bucket = "tfstate-309950511952"
-    key    = "ec2-jenkins/tfstate"
+    key    = "ec2-jenkins-myami/tfstate"
     region = "us-east-1"
     dynamodb_table = "tflock-tfstate-309950511952"
  }
