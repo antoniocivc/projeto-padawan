@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: 'teste-do-pato', credentialsId: '	github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
+                git branch: 'main', credentialsId: '	github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
             }
         }
         
