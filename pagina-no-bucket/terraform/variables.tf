@@ -10,10 +10,10 @@ variable "domain" {
   default     = ""
 }
 
-variable "root" {
-  description = "Path to the directory that holds your public documents"
-  type        = string
-}
+#variable "root" {
+#  description = "Path to the directory that holds your public documents"
+#  type        = string
+#}
 
 variable "index_document" {
   description = ""

@@ -51,7 +51,7 @@ module "website" {
 #}
 
 resource "aws_s3_bucket_public_access_block" "block_public_s3" {
-  bucket = module.website.website
+  bucket = module.website.name
 
   block_public_acls       = true
   block_public_policy     = true
