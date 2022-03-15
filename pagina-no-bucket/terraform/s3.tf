@@ -49,3 +49,12 @@ module "website" {
 #    redirect_all_requests_to = local.has_domain ? var.domain : module.website.website
 #  }
 #}
+
+resource "aws_s3_bucket_public_access_block" "block_public_s3" {
+  bucket = module.website.website
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
