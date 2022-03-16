@@ -17,7 +17,7 @@ data "aws_ami" "jenkins" {
   most_recent      = true
   name_regex       = "AMI-J"
   owners           = ["self"]
-
+}
 
 #pega o IP publico para ser usado no security group
 data "http" "ip" {
