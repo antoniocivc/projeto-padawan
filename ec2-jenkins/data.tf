@@ -11,14 +11,6 @@ filter {
   }
 }
 
-#pega a minha ami jenkins mais recente
-data "aws_ami" "jenkins" {
-  executable_users = ["self"]
-  most_recent      = true
-  name_regex       = "AMI-J"
-  owners           = ["self"]
-}
-
 #pega o IP publico para ser usado no security group
 data "http" "ip" {
   url = "https://ifconfig.me"
