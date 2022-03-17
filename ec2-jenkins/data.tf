@@ -1,8 +1,8 @@
 #pega uma ami da amazon, no caso ubuntu mais recente
-data "aws_ami" "ubuntu" {
-  owners      = ["amazon"]
-  most_recent = true
-  name_regex  = var.ami_os
+#data "aws_ami" "ubuntu" {
+#  owners      = ["amazon"]
+#  most_recent = true
+#name_regex  = var.ami_os
 
 #filtra a arquitetura da ami para x86_64
 filter {
