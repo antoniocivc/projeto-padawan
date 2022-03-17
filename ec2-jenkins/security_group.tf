@@ -9,7 +9,7 @@ resource "aws_security_group" "ssh_jenkins" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/32"]
+    cidr_blocks = ["0.0.0.0/0"]
 #   cidr_blocks = ["${data.http.ip.body}/32"]
   }
 #gera o ingress para o ssh na porta 8080, permitido para o ip publico
@@ -18,7 +18,7 @@ resource "aws_security_group" "ssh_jenkins" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/32"]
+    cidr_blocks = ["0.0.0.0/0"]
 #   cidr_blocks = ["${data.http.ip.body}/32"]
   }
 #gera o egress para toda internet
