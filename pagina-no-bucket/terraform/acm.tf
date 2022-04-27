@@ -1,7 +1,5 @@
 resource "aws_acm_certificate" "this" {
-  
   provider                  = aws
-  #domain_name               = "www.${local.domain}"
   domain_name               = local.domain
   validation_method         = "DNS"
   subject_alternative_names = ["*.${local.domain}", "www.${local.domain}"]
