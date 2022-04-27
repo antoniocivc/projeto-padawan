@@ -9,7 +9,12 @@ pipeline {
                      ls -lah
                  '''
              }
-         }      
+         }
+         stage('Git checkout') {
+            steps {
+                git branch: 'uploads3', credentialsId: '	github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
+            }
+        }      
          stage('Upload to AWS') {
               steps {
                   withAWS(region:'us-east-1',credentials:'aws-credentials') {
