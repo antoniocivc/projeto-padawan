@@ -1,0 +1,29 @@
+terraform {
+  required_version = ">= 0.13.1"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.45"
+    }
+
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 2.0"
+    }
+  }
+
+
+  backend "s3" {
+    #profile = "pessoal"
+    bucket = "tfstate-309950511952"
+    key    = "atlantis-ecs/tfstate"
+    region = "us-east-1"
+    dynamodb_table = "tflock-tfstate-309950511952"
+ }
+}
+
+provider "aws" {
+  region = "us-east-1"
+  #profile = "pessoal"
+}
