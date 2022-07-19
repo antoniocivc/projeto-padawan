@@ -9,7 +9,7 @@ terraform {
   }
   
    backend "s3" {
-    #profile = "pessoal"
+   # profile = "pessoal"
     bucket = "tfstate-309950511952"
     key    = "pagina-no-bucket/tfstate"
     region = "us-east-1"
