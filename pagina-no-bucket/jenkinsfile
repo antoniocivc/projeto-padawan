@@ -14,7 +14,7 @@ pipeline {
             steps {
                 dir("pagina-no-bucket/terraform") { 
                 withAWS(credentials:'aws-credentials') {
-                sh 'terraform init'
+                sh 'terraform init -reconfigure'
                 }
                 }
             }
