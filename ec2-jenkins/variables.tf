@@ -23,7 +23,7 @@ variable "ami_os" {
   description = ""
   default     = "ubuntu"
 }
-#define qual ami vai ser usada - usando jenkins-ami-v3
+#define qual ami vai ser usada - usando jenkins-ami-v3#
 variable "ami_name" {
   type        = string
   description = ""
