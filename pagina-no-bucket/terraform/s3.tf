@@ -21,10 +21,10 @@ module "website" {
  
   policy        = data.template_file.s3-public-policy.rendered
 
-  force_destroy = !local.has_domain
+  force_destroy = true #!local.has_domain
   tags          = local.common_tags
   versioning = {
-    enabled = true
+    enabled = false
   }
 
   filepath = "${path.module}/../website/"
