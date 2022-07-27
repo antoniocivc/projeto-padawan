@@ -12,7 +12,7 @@ pipeline {
          }
          stage('Git checkout') {
             steps {
-                git branch: 'uploads3', credentialsId: '	github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
+                git branch: 'uploads3', credentialsId: 'github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
             }
         }      
          stage('Upload to AWS') {
