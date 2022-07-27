@@ -12,8 +12,8 @@
 #}
 
 #pega o IP publico para ser usado no security group
-data "http" "ip" {
-  url = "https://ifconfig.me"
-}
+# data "http" "ip" {
+#   url = "https://ifconfig.me"
+# }
 
 data "aws_caller_identity" "current" {}
