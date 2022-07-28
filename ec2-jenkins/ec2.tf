@@ -1,6 +1,9 @@
 #cria a EC2 passando o userdata definido nas variables
 resource "aws_instance" "web" {
 #  ami           = data.aws_ami.ubuntu.id
+  depends_on = [
+    aws_key_pair.kp
+  ]
   ami            = var.ami_name
   instance_type = var.instance_type
   subnet_id     = aws_subnet.jenkins_public_subnet.id
