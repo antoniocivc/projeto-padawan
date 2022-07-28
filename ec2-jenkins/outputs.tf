@@ -23,7 +23,7 @@ output "ssh_key" {
   value       = var.key_name
 }
 
-output "ip" {
-  description = "exibe o ip publico usado para o security_group ingress"
-  value = data.http.ip.body
-}
+# output "ip" {
+#   description = "exibe o ip publico usado para o security_group ingress"
+#   value = data.http.ip.body
+# }
