@@ -23,11 +23,11 @@ variable "ami_os" {
   description = ""
   default     = "ubuntu"
 }
-#define qual ami vai ser usada - usando jenkins-ami-v3#
+#define qual ami vai ser usada - usando jenkins-ami-v4#
 variable "ami_name" {
   type        = string
   description = ""
-  default     = "ami-01080f355d46c5b59"
+  default     = "ami-0c4a43cd962e185f1"
 } 
 #define o nome da key_pair, é passado no plan do terraform pelo usuário/pipeline
 variable "key_name" {}
