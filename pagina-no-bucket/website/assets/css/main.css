@@ -1184,6 +1184,30 @@ input, select, textarea {
 			
 		}
 
+/* Icons2 */
+
+ul.icons2 {
+	cursor: default;
+}
+
+	ul.icons2 li {
+		display:inline-block;
+
+	}
+	ul.icons2 :hover {
+		color: #ffcb46;
+	}
+
+	ul.icons2 a {
+		display:inline-block;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		border: 0;
+		
+	}
+
 /* Sections/Article */
 
 	header {
