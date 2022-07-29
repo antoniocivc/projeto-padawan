@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                git branch: 'main', credentialsId: '	github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
+                git branch: 'projeto-magnata', credentialsId: 'github-credentials', url: 'https://github.com/antoniocivc/projeto-padawan'
             }
         }
         
@@ -25,7 +25,7 @@ pipeline {
                 
                     dir("pagina-no-bucket/terraform") {
                     withAWS(credentials:'aws-credentials') {
-                    sh 'terraform plan -var="domain=patomagico.com.br"'
+                    sh 'terraform plan -var="domain=magnatasemijoia18k.com.br"'
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
                  
                  dir("pagina-no-bucket/terraform") {
                  withAWS(credentials:'aws-credentials') {
-                 sh 'terraform apply --auto-approve -var="domain=patomagico.com.br"'
+                 sh 'terraform apply --auto-approve -var="domain=magnatasemijoia18k.com.br"'
                  }
                      
                  }

@@ -10,7 +10,7 @@ terraform {
 
   backend "s3" {
     bucket = "tfstate-309950511952"
-    key    = "route53-/tfstate"
+    key    = "route53-magnata/tfstate"
     region = "us-east-1"
     dynamodb_table = "tflock-tfstate-309950511952"
     profile = "pessoal"

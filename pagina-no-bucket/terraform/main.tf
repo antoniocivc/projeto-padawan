@@ -9,9 +9,9 @@ terraform {
   }
   
    backend "s3" {
-    #profile = "pessoal"
+   # profile = "pessoal"
     bucket = "tfstate-309950511952"
-    key    = "pagina-no-bucket/tfstate"
+    key    = "pagina-no-bucket-magnata/tfstate"
     region = "us-east-1"
     dynamodb_table = "tflock-tfstate-309950511952"
  }

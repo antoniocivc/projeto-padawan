@@ -28,7 +28,7 @@ atlantis_repo_allowlist = ["github.com/terraform-aws-modules/*", "github.com/ant
 # Specify one of the following block.
 # For Github
 atlantis_github_user = "kingaquaman"
-atlantis_github_user_token = ""
+atlantis_github_user_token = "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"
 
 # For Gitlab
 atlantis_gitlab_user = ""

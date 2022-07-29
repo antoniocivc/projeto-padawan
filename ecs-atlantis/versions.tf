@@ -15,7 +15,7 @@ terraform {
 
 
   backend "s3" {
-    #profile = "pessoal"
+    profile = "pessoal"
     bucket = "tfstate-309950511952"
     key    = "atlantis-ecs/tfstate"
     region = "us-east-1"
@@ -25,5 +25,5 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-  #profile = "pessoal"
+  profile = "pessoal"
 }

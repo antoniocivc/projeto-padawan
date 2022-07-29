@@ -71,6 +71,6 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
     lambda_function_arn = "${aws_lambda_function.cloudfront_invalidator.arn}"
     events              = ["s3:ObjectCreated:*"]
     #filter_prefix       = "/*"
-    #filter_suffix       = ".html"
+    filter_suffix       = ".html"
   }
 }
