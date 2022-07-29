@@ -1166,19 +1166,22 @@ input, select, textarea {
 	}
 
 		ul.icons li {
-			display: inline-block;
+			display:flexbox;
+			float: left;
+			width:45%;
 		}
 		ul.icons :hover {
 			color: #ffcb46;
 		}
 
 		ul.icons a {
-			display: inline-block;
+			display: flexbox;
 			width: 2em;
 			height: 2em;
 			line-height: 2em;
 			text-align: center;
 			border: 0;
+			
 		}
 
 /* Sections/Article */
