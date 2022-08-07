@@ -1,6 +1,6 @@
 #configuração padrão de ver~sao e provider da AWS, credenciais são passadas na pipeline ou via sistema
 terraform {
-  required_version = ">= 1.0.3"
+  required_version = ">= 1.0.9"
 
   required_providers {
     aws = {
@@ -11,7 +11,7 @@ terraform {
 
   backend "s3" {
     bucket = "tfstate-309950511952"
-    key    = "ec2-jenkins/tfstate"
+    key    = "ec2-jenkins-ami/tfstate"
     region = "us-east-1"
     dynamodb_table = "tflock-tfstate-309950511952"
  }
