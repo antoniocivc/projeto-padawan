@@ -45,7 +45,7 @@ data "archive_file" "cloudfront_invalidator" {
 resource "aws_lambda_function" "cloudfront_invalidator" {
   role             = aws_iam_role.cloudfront_invalidator.arn
   handler          = "lambda.handler"
-  runtime          = "python3.6"
+  runtime          = "python3.8"
   filename         = data.archive_file.cloudfront_invalidator.output_path
   function_name    = "cloudfront_invalidator_${local.clean_domain_name}"
   source_code_hash = data.archive_file.cloudfront_invalidator.output_base64sha256
