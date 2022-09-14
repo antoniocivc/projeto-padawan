@@ -134,7 +134,7 @@ data "aws_route53_zone" "this" {
   count = var.create_route53_record ? 1 : 0
 
   #name         = var.route53_zone_name
-  zone_id = "Z0671531VLKVSX3LYXBI"
+  zone_id = "Z08114923VXL9QOQWG6XB"
   private_zone = var.route53_private_zone
 }
 
